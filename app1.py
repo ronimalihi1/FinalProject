@@ -147,7 +147,7 @@ def add_userdata(username,password):
 	conn7.commit()
 def add_managerdata(username,password):
         c7.execute('INSERT INTO managerstable(username,password) VALUES (?,?)',(username,password))
-	conn7.commit()
+        conn7.commit()
 
 def login_user(username,password):
 	c7.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
