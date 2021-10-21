@@ -119,7 +119,7 @@ def main():
     title_container = st.container()
     col1, col2 = st.columns([1,20])
     #st.image(image, width=120)  
-    image = Image.open('/Users/ronimalihi/Desktop/project/test.PNG') 
+    image = Image.open('/test.PNG') 
     st.image(image, width=120)     
        
     st.markdown('<div style="color: black;text-align:left;">•Data •Insights •Recommendations</div>',
