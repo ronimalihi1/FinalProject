@@ -300,9 +300,9 @@ def main():
                                 new_password = st.text_input("Password",type='password',key='2')
 				user_exsit= get_user(new_user)
                                 if user_exsit:
-                                            st.warning("You Can't Use This USERNAME, Please choose another one ")
+                                    st.warning("You Can't Use This USERNAME, Please choose another one ")
                                
-                                if st.button("Signup"):
+                                elif st.button("Signup"):
                                     if t == "Open User account":
                                         st.subheader("Create New User Account")
                                         
