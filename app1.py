@@ -15,8 +15,8 @@ import sklearn as sk
 from PIL import Image
 
 # DB Management
-conn = sqlite3.connect('data.db')
-c = conn.cursor()
+conn7 = sqlite3.connect('data.db')
+c7 = conn7.cursor()
 
 
 import pandas as pd
@@ -137,33 +137,33 @@ def check_hashes(password,hashed_text):
 # You can also use the verify functions of the various libraries for the same purpose
 
 def create_usertable():
-	c.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
+	c7.execute('CREATE TABLE IF NOT EXISTS userstable(username TEXT,password TEXT)')
 def create_managerstable():
-	c.execute('CREATE TABLE IF NOT EXISTS managerstable(username TEXT,password TEXT)')
+	c7.execute('CREATE TABLE IF NOT EXISTS managerstable(username TEXT,password TEXT)')
 
 
 def add_userdata(username,password):
-	c.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
-	conn.commit()
+	c7.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
+	conn7.commit()
 def add_managerdata(username,password):
-	c.execute('INSERT INTO managerstable(username,password) VALUES (?,?)',(username,password))
-	conn.commit()
+	c7.execute('INSERT INTO managerstable(username,password) VALUES (?,?)',(username,password))
+	conn7.commit()
 
 def login_user(username,password):
-	c.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
-	data = c.fetchall()
+	c7.execute('SELECT * FROM userstable WHERE username =? AND password = ?',(username,password))
+	data = c7.fetchall()
 	return data
 def login_manager(username,password):
-	c.execute('SELECT * FROM managerstable WHERE username =? AND password = ?',(username,password))
-	data = c.fetchall()
+	c7.execute('SELECT * FROM managerstable WHERE username =? AND password = ?',(username,password))
+	data = c7.fetchall()
 	return data
 def view_all_users():
-    c.execute('SELECT * FROM userstable')
-    data = c.fetchall()
+    c7.execute('SELECT * FROM userstable')
+    data = c7.fetchall()
     return data
 def view_all_managers():
-    c.execute('SELECT * FROM managerstable')
-    data = c.fetchall()
+    c7.execute('SELECT * FROM managerstable')
+    data = c7.fetchall()
     return data
 #from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
