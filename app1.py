@@ -146,7 +146,7 @@ def add_userdata(username,password):
 	c7.execute('INSERT INTO userstable(username,password) VALUES (?,?)',(username,password))
 	conn7.commit()
 def add_managerdata(username,password):
-	c7.execute('INSERT INTO managerstable(username,password) VALUES (?,?)',(username,password))
+        c7.execute('INSERT INTO managerstable(username,password) VALUES (?,?)',(username,password))
 	conn7.commit()
 
 def login_user(username,password):
@@ -168,9 +168,9 @@ def view_all_managers():
 #from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
 def get_user(username):
-	c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
+        c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
 	data = c7.fetchall()
-	return data
+        return data
 def load_data(data):
     df=pd.read_csv(data)
     return df
