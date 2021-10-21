@@ -484,8 +484,8 @@ def main():
                             
                         aisle_id=st.text_input("aisle ID")
                         department_id=st.text_input("department id")
-			product_exist=get_product(product_id)
-			if product_exsit:
+                        product_exist=get_product(product_id)
+                        if product_exsit:
                           st.warning("You Can't Use This USERNAME, Please choose another one ")
 
 				
