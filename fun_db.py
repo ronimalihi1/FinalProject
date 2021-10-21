@@ -50,6 +50,9 @@ def view_all_prior():
     return data
 
 
+def create_table():
+	c.execute('CREATE TABLE IF NOT EXISTS products(product_id INT NOT NULL ,product_name TEXT, aisle_id INT, department_id INT)')
+
 def add_data(product_id,product_name,aisle_id,department_id):
 	c.execute('INSERT INTO products(product_id,product_name,aisle_id,department_id) VALUES (?,?,?,?)',(product_id,product_name,aisle_id,department_id))
 	conn.commit()
@@ -65,6 +68,10 @@ def view_all_products():
 def create_tabletest():
 	c.execute('CREATE TABLE IF NOT EXISTS lili(department_id INT NOT NULL ,department TEXT)')
 
+def view_all_cus():
+    c.execute('SELECT * FROM lili')
+    data = c.fetchall()
+    return data
 
 
 
