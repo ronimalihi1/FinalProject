@@ -300,7 +300,7 @@ def main():
                                
 				
 				
-                                elif st.button("Signup"):
+                                if st.button("Signup"):
                                     if t == "Open User account":
                                         st.subheader("Create New User Account")
                                         
