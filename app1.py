@@ -168,9 +168,9 @@ def view_all_managers():
 #from sklearn.feature_extraction.text import CountVectorizer
 #from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
 def get_user(username):
-    c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
-    data = c7.fetchall()
-    return data
+	c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
+	data = c7.fetchall()
+	return data
 def load_data(data):
     df=pd.read_csv(data)
     return df
@@ -297,7 +297,7 @@ def main():
                                 t= st.selectbox("task",["Open User account", "Open Manager account"])
                                 new_user = st.text_input("Username",key='1')
                                 new_password = st.text_input("Password",type='password',key='2')
-				user_exsit= get_user(new_user)
+				user_exsit = get_user(new_user)
                                 if user_exsit:
                                             st.warning("You Can't Use This USERNAME, Please choose another one ")
                                 
