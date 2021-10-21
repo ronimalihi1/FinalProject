@@ -404,7 +404,7 @@ def main():
                     st.subheader("Products Page")
                     
                     task = st.selectbox("task",[" ", "Add Product","Edit Product","Delete Product"])
-                    create_table()
+                   # create_table()
                     
                     if task == "Add Product":
                     
