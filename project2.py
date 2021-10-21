@@ -95,7 +95,7 @@ plt.show()
 
 kmeans = KMeans(n_clusters=4, init='k-means++', max_iter=100)
 kmeans.fit(X) # fitting the Kmeans algorithm to our data (the clustering Process)
-pred = kmeans.fit_predict(X)
+pred = kmeans.predict(X)
 clusters= kmeans.fit_transform(X)
 cluster_df = pd.DataFrame(clusters)
 
