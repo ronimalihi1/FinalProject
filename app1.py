@@ -484,7 +484,6 @@ def main():
                             
                         aisle_id=st.text_input("aisle ID")
                         department_id=st.text_input("department id")
-                        add_data(product_id,product_name,aisle_id,department_id)
 	
                      
                     
@@ -494,7 +493,7 @@ def main():
                         
 
                         if st.button("Add Product"):
-
+                            add_data(product_id,product_name,aisle_id,department_id)
                             st.success("Product ID: {} Added  To Products".format(product_id))
                             with st.expander("Read"):
                                 allproducts= view_all_products()
