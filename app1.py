@@ -169,7 +169,7 @@ def view_all_managers():
 #from sklearn.metrics.pairwise import cosine_similarity,linear_kernel
 def get_user(username):
         c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
-	data = c7.fetchall()
+        data = c7.fetchall()
         return data
 def load_data(data):
     df=pd.read_csv(data)
