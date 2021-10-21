@@ -297,6 +297,8 @@ def main():
                                 t= st.selectbox("task",["Open User account", "Open Manager account"])
                                 new_user = st.text_input("Username",key='1')
                                 new_password = st.text_input("Password",type='password',key='2')
+				user_exist=get_user(new_user)
+				
 				
                                 if st.button("Signup"):
                                     if t == "Open User account":
