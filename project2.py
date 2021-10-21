@@ -145,7 +145,7 @@ def get_recommendations(user_id, n): #n- num of recommended products
     clusterC = clusterC.merge(orders_prior, on = 'order_id')
     clusterC = clusterC[clusterC.reordered == 0]
     # get top n most frequent products(id)
-    rec_list = clusterC['product_id'].value_counts()[:5].index.tolist()
+    rec_list = clusterC['product_id'].value_counts()[:n].index.tolist()
     
     # print recommended products for cluster C
     for x in rec_list:
