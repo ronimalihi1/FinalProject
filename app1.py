@@ -26,7 +26,7 @@ import streamlit.components.v1 as components
 
 
 
-from fun_db import create_table,add_data,view_all_products,view_all_products_names,get_product,edit_product_data,delete_data,view_all_orders,view_all_prior,view_all_customers,get_customer,view_all_customers_names
+from fun_db import add_data,view_all_products,view_all_products_names,get_product,edit_product_data,delete_data,view_all_orders,view_all_prior,view_all_customers,get_customer,view_all_customers_names
 #from project2 import get_cluster,get_recommendations
     ### customers tables ###
 
