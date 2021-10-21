@@ -484,7 +484,7 @@ def main():
                             
                         aisle_id=st.text_input("aisle ID")
                         department_id=st.text_input("department id")
-			add_data(product_id,product_name,aisle_id,department_id)
+                        add_data(product_id,product_name,aisle_id,department_id)
 	
                      
                     
