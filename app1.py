@@ -484,11 +484,8 @@ def main():
                             
                         aisle_id=st.text_input("aisle ID")
                         department_id=st.text_input("department id")
-                        product_exist=get_product(product_id)
-                        if product_exsit:
-                          st.warning("You Can't Use This USERNAME, Please choose another one ")
-
-				
+			add_data(product_id,product_name,aisle_id,department_id)
+	
                      
                     
                     #cosine_sim= vectorize_text(df['aisle'])  
@@ -496,8 +493,7 @@ def main():
                     #num_of_rec= st.sidebar.number_input("Number",4,20,7)
                         
 
-                        elif st.button("Add Product"):
-                            add_data(product_id,product_name,aisle_id,department_id)
+                        if st.button("Add Product"):
 
                             st.success("Product ID: {} Added  To Products".format(product_id))
                             with st.expander("Read"):
