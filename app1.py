@@ -297,9 +297,6 @@ def main():
                                 t= st.selectbox("task",["Open User account", "Open Manager account"])
                                 new_user = st.text_input("Username",key='1')
                                 new_password = st.text_input("Password",type='password',key='2')
-                                user_exist=get_user(new_user)
-                                if user_exsit:
-                                    st.warning("You Can't Use This USERNAME, Please choose another one ")
                                
 				
 				
