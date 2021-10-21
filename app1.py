@@ -497,9 +497,8 @@ def main():
                         
 
                         elif st.button("Add Product"):
-                            
-                           
                             add_data(product_id,product_name,aisle_id,department_id)
+
                             st.success("Product ID: {} Added  To Products".format(product_id))
                             with st.expander("Read"):
                                 allproducts= view_all_products()
