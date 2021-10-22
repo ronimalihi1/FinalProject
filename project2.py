@@ -141,19 +141,29 @@ def get_recommendations(user_id, n): #n- num of recommended products
 
     C = get_cluster(user_id)
     clusterC= cluster_df[cluster_df['cluster'].isin([C])]
-    clusterC = clusterC.merge(orders, on = 'user_id')
-    clusterC = clusterC.merge(orders_prior, on = 'order_id')
-    clusterC = clusterC[clusterC.reordered == 0]
+    clusterC = clusterC.merge(orders_prior, on = 'user_id')
+    
+    user = clusterC[clusterC.user_id == user_id]
+    user_list = user['product_id']
     # get top n most frequent products(id)
-    rec_list = clusterC['product_id'].value_counts()[:n].index.tolist()
+    rec_list = clusterC['product_id'].value_counts().sort_values(ascending = False).index.tolist()
     
     # print recommended products for cluster C
     for x in rec_list:
-        row_list.append(products[products["product_id"] == x])
-        rec = pd.concat(row_list)
-    #user_rec = recom.loc[recom["cluster"] == c]
-    return rec
-                        
+        row_list.append(x)
+       # row_list.append(products[products["product_id"] == x])
+    
+        
+
+        if ((user_list == x).any()):
+            row_list.remove(x)
+            
+        row_list=row_list[:n]
+        rec = products.loc[products["product_id"].isin(row_list),"product_name"]
+        rec=pd.DataFrame(products,rec.index)
+
+        
+    return rec                      
 
 def get_cluster_recommendations(C, n): #n- num of recommended products
     row_list = []
