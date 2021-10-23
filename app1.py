@@ -395,11 +395,7 @@ def main():
                         
                         """
                      
-                        result = view_all_customers()
-			cus_df=view_all_customers()
-                        df=pd.DataFrame(cus_df,columns=['user_id','Gender','Age','District'])
-                        with st.expander("View All Users"):
-                            st.dataframe(df)
+                        
                       #  st.write(t)
                        # dff= pd.DataFrame(result,columns=["user_id","Gender","Age","District"])
                         #st.dataframe(dff)
@@ -412,6 +408,10 @@ def main():
                             #
                             
                         st.subheader("Search Customer")
+			cus_df=view_all_customers()
+                        df=pd.DataFrame(cus_df,columns=['user_id','Gender','Age','District'])
+                        with st.expander("View All Users"):
+                            st.dataframe(df)
                         search_term = st.number_input('Enter Customer ID/cluster',step=1)
 
                         n=st.number_input('Enter products number',step=1)
