@@ -298,6 +298,7 @@ def main():
                                 clean_dc2=pd.DataFrame(manager_results,columns=["Username","Password"])
                                 st.dataframe(clean_dc2)
                             elif task == "SignUp New User":
+
                                 t= st.selectbox("task",["Open User account", "Open Manager account"])
                                 new_user = st.text_input("Username",key='1')
                                 new_password = st.text_input("Password",type='password',key='2')
@@ -320,7 +321,7 @@ def main():
                                         add_userdata(new_user,make_hashes(new_password))
                                         add_managerdata(new_user,make_hashes(new_password))
 					
-                             elif task == "Delete":
+                            elif task == "Delete":
                                         
                                  with st.expander("View Data"):
                                      result = view_all_users()
