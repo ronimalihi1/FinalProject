@@ -449,7 +449,7 @@ def main():
                         df=pd.DataFrame(cus_df,columns=['user_id','Gender','Age','District'])
                         with st.expander("View All Users"):
                             st.dataframe(df)
-                        search_term = st.number_input('Enter Customer ID/cluster',step=1)
+                        search_term = st.number_input('Enter Customer ID/ Cluster (0-3)',step=1)
 
                         n=st.number_input('Enter products number',step=1)
                         search_choice = st.radio("Field to Search By",("Customer ID","cluster"))
