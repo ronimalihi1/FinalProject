@@ -176,7 +176,7 @@ def view_all_usersnames():
 	data = c7.fetchall()
 	return data
 
-def delete_user(product_id):
+def delete_user(username):
 	c7.execute('DELETE FROM userstable WHERE username="{}"'.format(username))
 	conn7.commit()
 def load_data(data):
