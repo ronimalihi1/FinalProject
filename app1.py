@@ -324,22 +324,22 @@ def main():
                             elif task == "Delete":
                                         
                                  with st.expander("View Data"):
-                                     result = view_all_users()
+                                         result = view_all_users()
                                     			# st.write(result)
-                                     clean_df = pd.DataFrame(result,columns=["username","password"])
-                                     st.dataframe(clean_df)
+                                         clean_df = pd.DataFrame(result,columns=["username","password"])
+                                         st.dataframe(clean_df)
                                     
                                  unique_list = [i[0] for i in view_all_usersnames()]
                                  delete_by_users_name =  st.selectbox("Select username",unique_list)
                                  if st.button("Delete"):
-                                     delete_data(delete_by_users_name)
-                                     st.warning("Deleted: '{}'".format(delete_by_users_name))
+                                         delete_data(delete_by_users_name)
+                                         st.warning("Deleted: '{}'".format(delete_by_users_name))
                                     
                                  with st.expander("Updated Data"):
-                                     result = view_all_users()
+                                         result = view_all_users()
                                     			# st.write(result)
-                                     clean_df = pd.DataFrame(result,columns=["username","password"])
-                                     st.dataframe(clean_df)
+                                         clean_df = pd.DataFrame(result,columns=["username","password"])
+                                         st.dataframe(clean_df)
                                     
                                
                                        
