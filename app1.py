@@ -287,7 +287,7 @@ def main():
                        result2 = login_manager(username,check_hashes(password,hashed_pswd))
                        if result2:
                            if choice2 == "Settings":
-                            task = st.selectbox("task",["Users Profile","SignUp New User"])
+                            task = st.selectbox("task",["Users Profile","SignUp New User","Delete"])
                             if task== "Users Profile":
                                 st.subheader("User Profiles")
                                 user_result = view_all_users()
