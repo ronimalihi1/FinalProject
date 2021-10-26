@@ -438,7 +438,6 @@ def main():
                            # b_dist = i[3]
                             #
                             
-                        st.subheader("Search Customer")
                         cus_df=view_all_customers()
                         HTML_BANNER = """
     <div style="background-color:#464e5f;padding:10px;border-radius:10px">
