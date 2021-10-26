@@ -175,6 +175,10 @@ def view_all_usersnames():
 	c7.execute('SELECT DISTINCT username FROM userstable')
 	data = c7.fetchall()
 	return data
+
+def delete_user(product_id):
+	c7.execute('DELETE FROM userstable WHERE username="{}"'.format(username))
+	conn7.commit()
 def load_data(data):
     df=pd.read_csv(data)
     return df
@@ -332,7 +336,7 @@ def main():
                                  unique_list = [i[0] for i in view_all_usersnames()]
                                  delete_by_users_name =  st.selectbox("Select username",unique_list)
                                  if st.button("Delete"):
-                                         delete_data(delete_by_users_name)
+                                         delete_user(delete_by_users_name)
                                          st.warning("Deleted: '{}'".format(delete_by_users_name))
                                     
                                  with st.expander("Updated Data"):
