@@ -171,6 +171,10 @@ def get_user(username):
         c7.execute('SELECT * FROM userstable WHERE username="{}"'.format(username))
         data = c7.fetchall()
         return data
+def view_all_usersnames():
+	c7.execute('SELECT DISTINCT username FROM userstable')
+	data = c7.fetchall()
+	return data
 def load_data(data):
     df=pd.read_csv(data)
     return df
@@ -315,6 +319,28 @@ def main():
                                         create_managerstable()
                                         add_userdata(new_user,make_hashes(new_password))
                                         add_managerdata(new_user,make_hashes(new_password))
+					
+                             elif task == "Delete":
+                                        
+                                 with st.expander("View Data"):
+                                     result = view_all_users()
+                                    			# st.write(result)
+                                     clean_df = pd.DataFrame(result,columns=["username","password"])
+                                     st.dataframe(clean_df)
+                                    
+                                 unique_list = [i[0] for i in view_all_usersnames()]
+                                 delete_by_users_name =  st.selectbox("Select username",unique_list)
+                                 if st.button("Delete"):
+                                    delete_data(delete_by_users_name)
+                                    st.warning("Deleted: '{}'".format(delete_by_users_name))
+                                    
+                                 with st.expander("Updated Data"):
+                                     result = view_all_users()
+                                    			# st.write(result)
+                                     clean_df = pd.DataFrame(result,columns=["username","password"])
+                                     st.dataframe(clean_df)
+                                    
+                               
                                        
     
                                     
