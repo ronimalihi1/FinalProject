@@ -440,6 +440,13 @@ def main():
                             
                         st.subheader("Search Customer")
                         cus_df=view_all_customers()
+                        HTML_BANNER = """
+    <div style="background-color:#464e5f;padding:10px;border-radius:10px">
+    <h1 style="color:white;text-align:center;">Search Customers Recommendations </h1>
+    </div>
+    """
+                        components.html(HTML_BANNER)
+                       
                         df=pd.DataFrame(cus_df,columns=['user_id','Gender','Age','District'])
                         with st.expander("View All Users"):
                             st.dataframe(df)
