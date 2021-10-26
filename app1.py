@@ -332,8 +332,8 @@ def main():
                                  unique_list = [i[0] for i in view_all_usersnames()]
                                  delete_by_users_name =  st.selectbox("Select username",unique_list)
                                  if st.button("Delete"):
-                                    delete_data(delete_by_users_name)
-                                    st.warning("Deleted: '{}'".format(delete_by_users_name))
+                                     delete_data(delete_by_users_name)
+                                     st.warning("Deleted: '{}'".format(delete_by_users_name))
                                     
                                  with st.expander("Updated Data"):
                                      result = view_all_users()
